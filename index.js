@@ -29,25 +29,24 @@ module.exports = {
           getObjectPaths(obj[i], c + i);
         }
       }
-    }
+    };
 
     getObjectPaths(input);
 
     var deleteValue = function(obj, path) {
 
-      var path = path.split('.'),
-          parent = obj;
+      path = path.split('.');
 
       for (var i = 0; i < path.length - 1; i += 1) {
-        parent = parent[path[i]];
+        obj = obj[path[i]];
       }
 
-      if (_.isArray(parent)) {
-        parent.splice(path[path.length-1], 1);
+      if (_.isArray(obj)) {
+        obj.splice(path[path.length-1], 1);
       } else {
-        parent[path[path.length-1]] = undefined;
+        obj[path[path.length-1]] = undefined;
       }
-    }
+    };
 
     var iterateOverArray = function(inputs) {
       for ( var x in inputs ) {
@@ -68,11 +67,11 @@ module.exports = {
           }
         }
       }
-    }
+    };
 
     _(_.min([depth, endpoints])).times(function(i){
       iterateOverArray(output);
-    })
+    });
 
     for ( var i in output ) {
       output[i] = JSON.parse(output[i]);
@@ -81,4 +80,4 @@ module.exports = {
     return output;
   }
 
-}
+};
