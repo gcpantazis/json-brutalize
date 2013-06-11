@@ -11,9 +11,10 @@ Usage
 
 **Methods:**
 
-* `generate(JSON, depth)`
+* `generate(JSON, depth, typeCheck)`
   * `JSON`: The fully-populated JSON object to generate variations against.
   * `depth`: *(optional)* The maximum number of decendents `generate` will attempt to delete. If omitted, will attempt the maximum number of variations (equal to the number of endpoints in `JSON`).
+  * `typeCheck`: *(optional)* generates clones where elements are replaced by different types of [valid JSON objects](http://www.json.org/).
 
 **Example:**
 
@@ -30,6 +31,8 @@ Usage
       var output = Brutalize.generate(fixture, 1); // Returns array of length 5.
       var output2 = Brutalize.generate(fixture, 2); // Returns array of length 9.
       var output3 = Brutalize.generate(fixture); // All possible variations of `fixture`. Returns array of length 10.
+      var output4 = Brutalize.generate(fixture, 2, true); // Returns array of length 179.
+
 
 **TODO:**
 

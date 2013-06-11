@@ -1,7 +1,7 @@
 {
   "name": "json-brutalize",
   "description": "Tool for generating JSON variations given a fully-populated starting point.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/gcpantazis/json-brutalize",
   "author": {
     "name": "George Pantazis",
